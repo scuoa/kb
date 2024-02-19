@@ -1,0 +1,155 @@
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05); /* Adjust the last value (opacity) as needed */
+  z-index: -1; /* Ensure the overlay is behind the content */
+}
+.black-bar {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(77, 71, 71, 0.781); 
+}
+.return-to-top {
+    position: relative;
+    bottom: 0px; 
+    left: 0px; 
+    padding: 10px;
+    cursor: pointer;
+}
+#btn-back-to-top {
+    position: relative;
+    bottom: 100px;
+    left: 100px;
+}
+.container {
+    background-color: rgb(255, 255, 255);
+}
+/* Add CSS styles for video gallery */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Add CSS styles for zoomed-in images */
+.zoomed-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.zoomed-image img {
+    max-width: 90%;
+    max-height: 70%;
+}
+.image-description {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+/* Arrows for zoomed images */
+.arrow-zoom {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99999;
+}
+.arrow-left-zoom  {
+    left: 10px;
+}
+.arrow-right-zoom  {
+    right: 10px;
+}
+/* Add CSS styles for arrow buttons */
+.arrow {
+    position: absolute; /* Update this line */
+    bottom: -30px; /* Update this line */
+    width: 30px; /* Update this line */
+    height: 30px; /* Update this line */
+    background-color: transparent; /* Update this line */
+    border: none; /* Update this line */
+    color: #000; /* Update this line */
+    font-size: 24px;
+    transition: color 0.3s; /* Add transition for smooth color change */
+}
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.arrow-left {
+    left: calc(50% - 50px); /* Adjust position */
+}
+.arrow-right {
+    left: calc(50% + 20px); /* Adjust position */
+}
+/* Add CSS styles for pagination */
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+    position: relative; /* Add this line */
+}
+.pagination-info {
+    margin-bottom: 10px;
+}
+/* Add CSS styles for thumbnail band */
+.thumbnail-band {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    overflow-x: auto;
+    scrollbar-width: none; /* hide scrollbar for browsers that support it */
+    -ms-overflow-style: none; /* hide scrollbar for IE and Edge */
+    position: fixed; /* position the thumbnail band */
+    bottom: 0; /* align the thumbnail band to the bottom */
+    left: 0; /* align the thumbnail band to the left */
+    width: 100%; /* make the thumbnail band full width */
+    background-color: rgba(0, 0, 0, 0.8); /* add background color */
+    padding: 10px 0; /* add padding for spacing */
+}
+.thumbnail-band::-webkit-scrollbar {
+    display: none; /* hide scrollbar for Chrome, Safari, and Opera */
+}
+/* Add CSS styles for individual thumbnails */
+.thumbnail {
+    width: 100px; /* Adjust thumbnail width */
+    height: 75px; /* Adjust thumbnail height */
+    margin: 0 5px; /* Adjust margin between thumbnails */
+    cursor: pointer;
+    border: 2px solid transparent; /* Add border for thumbnail */
+    transition: border-color 0.3s; /* Add transition for border color */
+}
+.thumbnail:hover,
+.thumbnail.highlighted {
+    border-color: #007bff; /* Change border color on hover or when highlighted */
+}
