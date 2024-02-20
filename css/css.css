@@ -1,3 +1,7 @@
+.transparent-bg {
+    background-color: transparent !important;
+}
+
 body::after {
   content: "";
   position: fixed;
@@ -152,4 +156,8 @@ body::after {
 .thumbnail:hover,
 .thumbnail.highlighted {
     border-color: #007bff; /* Change border color on hover or when highlighted */
+}
+.btnborder {
+    border: 1px solid #8f8d8d81; /* Add a 1px solid border with color #ccc */
+    border-radius: 5px; /* Make the border rounded with a 5px radius */
 }
