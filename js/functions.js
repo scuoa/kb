@@ -13,6 +13,9 @@ function setValue(value) {
 function reloadPage() {
   // remove zoom event listeners
   removeImageZoom();
+  // reset to first page
+  currentPage = 1;
+  currentIndexPage = 0;
   // load new images
   loadImages();
   updatePaginationButtons();
